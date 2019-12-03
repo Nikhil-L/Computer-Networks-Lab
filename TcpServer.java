@@ -26,7 +26,7 @@ public class TcpServer
 			System.out.println(file);
 			if(file.exists())
 			{
-				sendToclient.writeBytes("Yes");
+				sendToclient.writeBytes("Yes\n");
 				f = new FileReader(filename);
 				ff = new BufferedReader(f);
 				String string;

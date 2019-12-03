@@ -19,7 +19,7 @@ public class TcpClient
 
 			BufferedReader i = new BufferedReader(new InputStreamReader(client.getInputStream()));
 			String string = i.readLine();
-			if(string.equals("Yes\n"))
+			if(string.equals("Yes"))
 			{
 				while((string = i.readLine()) != null)
 					System.out.println(string);
