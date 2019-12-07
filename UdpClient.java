@@ -13,7 +13,10 @@ public class UdpClient
 			InetAddress host = InetAddress.getByName("127.0.0.1");
 
 			String message = "TextMessage";
-			byte []sendMessage = message.getBytes();
+			int count = 10;
+			while(count > 0)
+			{
+				byte []sendMessage = message.getBytes();
 			DatagramPacket request = new DatagramPacket(sendMessage, sendMessage.length, host, serversocket);
 			client.send(request);
 
@@ -22,6 +25,7 @@ public class UdpClient
 			client.receive(reply);
 
 			System.out.println(new String(reply.getData()));
+			}
 			client.close();
 		}
 		catch(Exception e)
